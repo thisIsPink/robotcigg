@@ -1,0 +1,102 @@
+<!doctype html>
+<html class="x-admin-sm">
+    <head>
+        <meta charset="UTF-8">
+        <title>积分系统</title>
+        <meta name="renderer" content="webkit|ie-comp|ie-stand">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+        <link rel="stylesheet" href="__XA__/css/font.css">
+        <link rel="stylesheet" href="__XA__/css/xadmin.css">
+        <!-- <link rel="stylesheet" href="./css/theme5.css"> -->
+        <script src="__XA__/lib/layui/layui.js" charset="utf-8"></script>
+        <script type="text/javascript" src="__XA__/js/xadmin.js"></script>
+        <script>
+            // 是否开启刷新记忆tab功能
+            // var is_remember = false;
+        </script>
+    </head>
+    <body class="index">
+        <!-- 顶部开始 -->
+        <div class="container">
+            <div class="logo">
+                <a href="/index/index/index">代理商管理系统</a></div>
+            <div class="left_open">
+                <a><i title="展开左侧栏" class="iconfont">&#xe699;</i></a>
+            </div>
+            <ul class="layui-nav right" lay-filter="">
+                <li class="layui-nav-item to-index">
+                    <a href="/admin/api/loginOut">退出登陆</a></li>
+            </ul>
+        </div>
+        <div class="left-nav">
+            <div id="side-nav">
+                <ul id="nav">
+                    <li>
+                        <a onclick="xadmin.add_tab('会员列表','/admin/index/member_list.html',true)">
+                            <i class="iconfont left-nav-li" lay-tips="会员管理">&#xe6b8;</i>
+                            <cite>会员管理</cite>
+                            <i class="iconfont nav_right">&#xe697;</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a onclick="xadmin.add_tab('注册申请','/admin/index/examine.html',true)">
+                            <i class="iconfont left-nav-li layui-icon" lay-tips="注册申请">&#xe770;</i>
+                            <cite>注册申请</cite>
+                            <i class="iconfont nav_right">&#xe697;</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a onclick="xadmin.add_tab('结算','/admin/index/settlement.html',true)">
+                            <i class="iconfont left-nav-li layui-icon" lay-tips="结算">&#xe659;</i>
+                            <cite>结算</cite>
+                            <i class="iconfont nav_right">&#xe697;</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a onclick="xadmin.add_tab('结算历史','/admin/index/settlementLog.html',true)">
+                            <i class="iconfont left-nav-li layui-icon" lay-tips="结算历史">&#xe63c;</i>
+                            <cite>结算历史</cite>
+                            <i class="iconfont nav_right">&#xe697;</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a onclick="xadmin.add_tab('推荐关系图','/admin/index/tree.html',true)">
+                            <i class="iconfont left-nav-li layui-icon" lay-tips="推荐关系图">&#xe64c;</i>
+                            <cite>推荐关系图</cite>
+                            <i class="iconfont nav_right">&#xe697;</i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- <div class="x-slide_left"></div> -->
+        <!-- 左侧菜单结束 -->
+        <!-- 右侧主体开始 -->
+        <div class="page-content">
+            <div class="layui-tab tab" lay-filter="xbs_tab" lay-allowclose="false">
+                <ul class="layui-tab-title">
+                    <li class="home">
+                        <i class="layui-icon">&#xe68e;</i>我的桌面</li></ul>
+                <div class="layui-unselect layui-form-select layui-form-selected" id="tab_right">
+                    <dl>
+                        <dd data-type="this">关闭当前</dd>
+                        <dd data-type="other">关闭其它</dd>
+                        <dd data-type="all">关闭全部</dd></dl>
+                </div>
+                <div class="layui-tab-content">
+                    <div class="layui-tab-item layui-show">
+                        <iframe src='/admin/index/welcome.html' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
+                    </div>
+                </div>
+                <div id="tab_show"></div>
+            </div>
+        </div>
+        <div class="page-content-bg"></div>
+        <style id="theme_style"></style>
+        <!-- 右侧主体结束 -->
+        <!-- 中部结束 -->
+    </body>
+
+</html>

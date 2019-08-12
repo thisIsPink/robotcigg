@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html class="x-admin-sm">
+
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎页面-X-admin2.2</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <link rel="stylesheet" href="__XA__/css/font.css">
+    <link rel="stylesheet" href="__XA__/css/xadmin.css">
+    <script src="__XA__/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="__XA__/js/xadmin.js"></script>
+</head>
+
+<body>
+<div class="x-nav">
+            <span class="layui-breadcrumb">
+                <a href="">首页</a>
+                <a href="">演示</a>
+                <a>
+                    <cite>导航元素</cite></a>
+            </span>
+    <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" onclick="location.reload()" title="刷新">
+        <i class="layui-icon layui-icon-refresh" style="line-height:30px"></i>
+    </a>
+</div>
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body ">
+                    <table class="layui-table" lay-data="{url:'/admin/info/settlementLog',page:true,toolbar: '#toolbarDemo',id:'test'}" lay-filter="test">
+                        <thead>
+                        <tr>
+                            <th lay-data="{field:'user'}">用户名</th>
+                            <th lay-data="{field:'name'}">真实姓名</th>
+                            <th lay-data="{field:'phone'}">手机</th>
+                            <th lay-data="{field:'integral'}">积分</th>
+                            <th lay-data="{field:'down_money'}">下级获得总金额</th>
+                            <th lay-data="{field:'time',templet:'<div> {{getLocalTime(d.time)}}</div>'}">时间</th>
+                            <th lay-data="{field:'money'}">获得金额</th>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>layui.use('table',
+    function() {
+        var table = layui.table;
+    });
+function getLocalTime(nS) {
+    if(nS==null||nS==''){
+        return '无';
+    }
+    return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/,' ');
+}
+</script>
+
+</html>

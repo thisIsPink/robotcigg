@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html class="x-admin-sm">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>欢迎页面-X-admin2.2</title>
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+        <link rel="stylesheet" href="__XA__/css/font.css">
+        <link rel="stylesheet" href="__XA__/css/xadmin.css">
+        <script src="__XA__/lib/layui/layui.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./js/xadmin.js"></script>
+    </head>
+    <body>
+        <div class="layui-fluid">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-body ">
+                            <blockquote class="layui-elem-quote">欢迎用户：
+                                <span class="x-red">test</span>！当前时间:<{$dtime|date='Y-m-d H:i'}>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-header">数据统计</div>
+                        <div class="layui-card-body ">
+                            <ul class="layui-row layui-col-space10 layui-this x-admin-carousel x-admin-backlog">
+                                <li class="layui-col-md3 layui-col-xs6">
+                                    <a href="javascript:;" class="x-admin-backlog-body">
+                                        <h3>总积分</h3>
+                                        <p><cite><{$userInfo['integral']}></cite></p>
+                                    </a>
+                                </li>
+                                <li class="layui-col-md3 layui-col-xs6">
+                                    <a href="javascript:;" class="x-admin-backlog-body">
+                                        <h3>奖金</h3>
+                                        <p><cite><{$userInfo['money']}></cite></p>
+                                    </a>
+                                </li>
+                                <li class="layui-col-md3 layui-col-xs6">
+                                    <a href="javascript:;" class="x-admin-backlog-body">
+                                        <h3>购买总支数</h3>
+                                        <p><cite>300</cite></p>
+                                    </a>
+                                </li>
+                                <li class="layui-col-md3 layui-col-xs6">
+                                    <a href="javascript:;" class="x-admin-backlog-body">
+                                        <h3>上月积分奖金</h3>
+                                        <p><cite><{$userInfo['up_money']}></cite></p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-sm6 layui-col-md3">
+                    <div class="layui-card">
+                        <div class="layui-card-header">一级代理
+                            <span class="layui-badge layui-bg-cyan layuiadmin-badge">已激活</span></div>
+                        <div class="layui-card-body  ">
+                            <p>
+                                <span class="layuiadmin-span-color"><{present name="$down[0]"}><{$down[0]}><{else /}>0<{/present}> 人
+                                    <i class="layui-inline layui-icon layui-icon-face-smile-b"></i></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-sm6 layui-col-md3">
+                    <div class="layui-card">
+                        <div class="layui-card-header">二级代理
+                            <span class="layui-badge layui-bg-cyan layuiadmin-badge">已激活</span></div>
+                        <div class="layui-card-body ">
+                            <p>
+                                <span class="layuiadmin-span-color"><{present name="$down[1]"}><{$down[1]}><{else /}>0<{/present}> 人
+                                    <i class="layui-inline layui-icon layui-icon-face-smile-b"></i></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-sm6 layui-col-md3">
+                    <div class="layui-card">
+                        <div class="layui-card-header">三级代理
+                            <span class="layui-badge layui-bg-cyan layuiadmin-badge">已激活</span></div>
+                        <div class="layui-card-body ">
+                            <p>
+                                <span class="layuiadmin-span-color"><{present name="$down[2]"}><{$down[2]}><{else /}>0<{/present}> 人
+                                    <i class="layui-inline layui-icon layui-icon-face-smile-b"></i></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-sm6 layui-col-md3">
+                    <div class="layui-card">
+                        <div class="layui-card-header">四级代理
+                            <span class="layui-badge layui-bg-cyan layuiadmin-badge">已激活</span></div>
+                        <div class="layui-card-body ">
+                            <p>
+                                <span class="layuiadmin-span-color"><{present name="$down[3]"}><{$down[3]}><{else /}>0<{/present}> 人
+                                    <i class="layui-inline layui-icon layui-icon-face-smile-b"></i></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-header">个人信息</div>
+                        <div class="layui-card-body ">
+                            <table class="layui-table">
+                                <tbody>
+                                    <tr>
+                                        <th>用户状态</th>
+                                        <td><{$userInfo['status']==1?'已激活':'未激活'}></td></tr>
+                                    <tr>
+                                        <th>用户名</th>
+                                        <td><{$userInfo['user']}></td></tr>
+                                    <tr>
+                                        <th>用户等级</th>
+                                        <td>官方代理人</td></tr>
+                                    <tr>
+                                        <th>用户姓名</th>
+                                        <td><{$userInfo['name']}></td></tr>
+                                    <tr>
+                                        <th>联系电话</th>
+                                        <td><{$userInfo['phone']}></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <{if $invInfo['status']!=null}>
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-header">上级信息</div>
+                        <div class="layui-card-body ">
+                            <table class="layui-table">
+                                <tbody>
+                                <tr>
+                                    <th>用户状态</th>
+                                    <td><{$invInfo['status']==1?'已激活':'未激活'}></td></tr>
+                                <tr>
+                                    <th>用户名</th>
+                                    <td><{$invInfo['user']}></td></tr>
+                                <tr>
+                                    <th>用户等级</th>
+                                    <td>官方代理人</td></tr>
+                                <tr>
+                                    <th>用户姓名</th>
+                                    <td><{$invInfo['name']}></td></tr>
+                                <tr>
+                                    <th>联系电话</th>
+                                    <td><{$invInfo['phone']}></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <{/if}>
+            </div>
+        </div>
+    </body>
+</html>
